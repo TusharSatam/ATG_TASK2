@@ -1,3 +1,5 @@
+
+// -----------------Navbar Functionality -------------------------
 const svgBar = document.querySelector(".svgBar");
 const opaqueRing = document.querySelector("#Opaque_Ring");
 const purple = "#7421b8";
@@ -51,41 +53,69 @@ window.addEventListener("scroll", function() {
 });
 
 
-// const svgBar = document.querySelector(".svgBar");
-// const purple = "#7421b8";
-// const blue = "#4D26CB";
-// const black = "#0E103A";
-// const BlackS4 = "#0e0a0a";
-// const BlueS5 = "#124BA1";
-// const DarkBlueS6 = "#0D3879";
-// const green = "#0c8b2c";
+  
+
+  var dots1 = document.querySelector('#Dots1');
+  var dots2 = document.querySelector('#Dots2');
+  var dots3 = document.querySelector('#Dots3');
+  var dots4 = document.querySelector('#Dots4');
+  var dots5 = document.querySelector('#Dots5');
+  var dots6 = document.querySelector('#Dots6');
+  var dots7 = document.querySelector('#Dots7');
+  var section1 = document.querySelector('#S1');
+  var section2 = document.querySelector('#S2');
+  var section3 = document.querySelector('#S3');
+  var section4 = document.querySelector('#S4');
+  var section5 = document.querySelector('#S5');
+  var section6 = document.querySelector('#S6');
+  var section7 = document.querySelector('#S7');
+
+  
+  dots1.addEventListener('click', function() {
+    section1.scrollIntoView({ behavior: 'smooth' });
+  });
+  dots2.addEventListener('click', function() {
+    section2.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  dots3.addEventListener('click', function() {
+    section3.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  dots4.addEventListener('click', function() {
+    section4.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  dots5.addEventListener('click', function() {
+    section5.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  dots6.addEventListener('click', function() {
+    section6.scrollIntoView({ behavior: 'smooth' });
+  });
+  dots7.addEventListener('click', function() {
+    section7.scrollIntoView({ behavior: 'smooth' });
+  });
 
 
-// window.addEventListener("scroll", function() {
-//   const windowY = window.scrollY;
-//   if (windowY >= 0 && windowY < 350) {
-//     svgBar.style.backgroundImage = `linear-gradient(to right, ${purple} 60%, ${purple} 100%)`;
-//   } else if (windowY >= 350 && windowY < 1100) {
-//     svgBar.style.backgroundImage = `linear-gradient(to right, ${blue} 60%, ${blue} 100%)`;
-//   } else if (windowY >= 1100 && windowY <= 1860) {
-//     svgBar.style.backgroundImage = `linear-gradient(to right, ${black} 60%, ${black} 100%)`;
-//   }
-//   else if (windowY >= 1860 && windowY <= 2600) {
-//     svgBar.style.backgroundImage = `linear-gradient(to right, ${BlackS4} 60%, ${BlackS4} 100%)`;
-//   }
-//   else if (windowY >= 2600 && windowY <= 3360) {
-//     svgBar.style.backgroundImage = `linear-gradient(to right, ${BlueS5} 60%, ${BlueS5} 100%)`;
-//   }
-//   else if (windowY >= 3360 && windowY <= 4120) {
-//     svgBar.style.backgroundImage = `linear-gradient(to right, ${DarkBlueS6} 60%, ${DarkBlueS6} 100%)`;
-//   }
-//   else if (windowY >= 4120 && windowY <= 4900) {
-//     svgBar.style.backgroundImage = `linear-gradient(to right, ${green} 60%, ${green} 100%)`;
-//   }
+// -----------------Owl C. Functionality -------------------------
 
-// });
+if (window.innerWidth < 768) {
+    document.querySelector('.section_Container').classList.add('owl-carousel', 'owl-theme', 'owl-loaded' ,'owl-drag');
+} else {
+  document.querySelector('.section_Container').classList.remove('owl-carousel', 'owl-theme', 'owl-loaded' ,'owl-drag');
+}
+window.addEventListener('resize', function() {
+    location.reload();
+    if (window.innerWidth < 768) {
+        document.querySelector('.section_Container').classList.add('owl-carousel', 'owl-theme', 'owl-loaded' ,'owl-drag');
+    } else {
+      document.querySelector('.section_Container').classList.remove('owl-carousel', 'owl-theme', 'owl-loaded' ,'owl-drag');
+    }
+  });
 
-//   ----------------------------------------------
+
+//   ----------------------Screen1------------------------
 
 gsap.from(".rightSide_Container1 .img_1",{
     y:200,
@@ -134,7 +164,8 @@ gsap.from(".viewCS",{
     y: 50,
     opacity: 0,
     transform: "scale(0)",
-    duration: 1,
+    filter: "blur(100px)",
+    duration: 1.3,
     scrollTrigger: {
         // markers:true,
         trigger: ".viewCS",
@@ -149,14 +180,14 @@ gsap.from(".viewCS",{
 
 //   const svgBar = document.querySelector('.svgBar');
 
-  window.addEventListener('scroll', function() {
+//   window.addEventListener('scroll', function() {
     // if (window.scrollY > 404) {
-        console.log(window.scrollY);
+        // console.log(window.scrollY);
     //   svgBar.style.backgroundImage = 'none';
     //   svgBar.style.background = 'linear-gradient(to right, #7421b8 60%, #501386 100%)';
 
     // } 
-  });
+//   });
 
 
 
@@ -206,8 +237,8 @@ gsap.from(".CS",{
     y: 70,
     opacity: 0,
     transform: "scale(0)",
-    duration: .8,
-    ease: "power3.out",
+    duration: 1.3,
+    filter: "blur(100px)",
     scrollTrigger: {
         // markers:true,
         trigger: ".mainContent2",
@@ -252,6 +283,7 @@ gsap.from(".leftSide_Container3 .topHeading3,.mainContent3 p",{
     y:-70,
     opacity:0,
     duration:1,
+    delay:.5,
     scrollTrigger: {
         trigger: ".leftSide_Container3 .topHeading3,.mainContent3 p",     
         toggleActions: "restart reverse restart reverse",
@@ -259,14 +291,14 @@ gsap.from(".leftSide_Container3 .topHeading3,.mainContent3 p",{
     }
 })
 
-gsap.from(".bottomContent3 .CS",{
+gsap.from(".CS3",{
     y: 70,
     opacity: 0,
     transform: "scale(0)",
-    duration: .8,
-    ease: "power3.out",
+    filter: "blur(100px)",
+    duration: 1.3,
     scrollTrigger: {
-        trigger: ".bottomContent3 .CS",
+        trigger: ".CS3",
         toggleActions: "restart reverse restart reverse"
     }
 });
@@ -340,6 +372,7 @@ gsap.from(".leftSide_Container4 .topHeading4,.mainContent4 p",{
     y:-70,
     opacity:0,
     duration:1,
+    delay:.5,
     scrollTrigger: {
         trigger: ".leftSide_Container4 .topHeading4,.mainContent4 p",     
         toggleActions: "restart reverse restart reverse",
@@ -351,8 +384,8 @@ gsap.from(".bottomContent4 .View",{
     y: 70,
     opacity: 0,
     transform: "scale(0)",
-    duration: .8,
-    ease: "power3.out",
+    filter: "blur(100px)",
+    duration: 1.3,
     scrollTrigger: {
         trigger: ".bottomContent4 .View",
         toggleActions: "restart reverse restart reverse"
@@ -427,6 +460,7 @@ gsap.from(".leftSide_Container5 .topHeading5,.mainContent5 p",{
     y:70,
     opacity:0,
     duration:1,
+    delay:.5,
     scrollTrigger: {
         trigger: ".leftSide_Container5 .topHeading5,.mainContent5 p",     
         toggleActions: "restart reverse restart reverse",
@@ -438,8 +472,8 @@ gsap.from(".bottomContent5 .View5",{
     y: 70,
     opacity: 0,
     transform: "scale(0)",
-    duration: .8,
-    ease: "power3.out",
+    filter: "blur(100px)",
+    duration: 1.3,
     scrollTrigger: {
         trigger: ".bottomContent5 .View5",
         toggleActions: "restart reverse restart reverse"
@@ -469,7 +503,7 @@ gsap.from(".leftSide_Container6 .topHeading6,.mainContent6 p",{
     y:70,
     opacity:0,
     duration:1,
-    delay:.3,
+    delay:.5,
     scrollTrigger: {
         trigger: ".leftSide_Container6 .topHeading6,.mainContent6 p",     
         toggleActions: "restart reverse restart reverse",
@@ -481,8 +515,8 @@ gsap.from(".bottomContent6 .View6",{
     y: 70,
     opacity: 0,
     transform: "scale(0)",
-    duration: .8,
-    ease: "power3.out",
+    filter: "blur(100px)",
+    duration: 1.3,
     scrollTrigger: {
         trigger: ".bottomContent6 .View6",
         toggleActions: "restart reverse restart reverse"
@@ -510,7 +544,7 @@ gsap.from(".leftSide_Container7 .topHeading7,.mainContent7 p,.mainContent7 h1",{
     y:70,
     opacity:0,
     duration:1,
-    delay:.3,
+    delay:.5,
     scrollTrigger: {
         trigger: ".leftSide_Container7 .topHeading7,.mainContent7 p,.mainContent7 h1",     
         toggleActions: "restart reverse restart reverse",
@@ -522,8 +556,8 @@ gsap.from(".bottomContent7 .CS7",{
     y: 70,
     opacity: 0,
     transform: "scale(0)",
-    duration: .8,
-    ease: "power3.out",
+    filter: "blur(100px)",
+    duration: 1.3,
     scrollTrigger: {
         trigger: ".mainContent7",
         toggleActions: "restart reverse restart reverse"
